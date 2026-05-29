@@ -69,7 +69,7 @@ function App() {
         if (disposed) return;
         setBackendReachable(false);
         setCameraStatus("Disconnected");
-        setStatusMessage("Backend is not reachable on port 8000");
+        setStatusMessage("Backend is not reachable");
       }
     };
 
