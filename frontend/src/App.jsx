@@ -152,6 +152,20 @@ function App() {
     setAnalysisStreamError("");
     setIsAnalyzing(false);
   };
+  const handleReset = async () => {
+  try {
+    await fetch(`${API_BASE}/reset_analysis`, { method: "POST" });
+    setAnalysisError("");
+    setAnalysisResult(null);
+    setAnalysisProgress(null);
+    setAnalysisJobId("");
+    setAnalysisStreamUrl("");
+    setAnalysisStreamError("");
+    setIsAnalyzing(false);
+  } catch {
+    setAnalysisError("Reset failed. Try again.");
+  }
+};
 
   // ── submit: analyze selected assets video ────────────────────
   const handleAnalyze = async (e) => {
@@ -265,6 +279,14 @@ function App() {
             >
               {isAnalyzing ? "Analyzing..." : "Upload & Count Bottles"}
             </button>
+           <button
+             type="button"
+             className="upload-button"
+             style={{ background: "#e53e3e", marginLeft: "8px" }}
+             onClick={handleReset}
+           >
+              Reset
+          </button>
           </form>
 
           {analysisError && <p className="error-message">{analysisError}</p>}
