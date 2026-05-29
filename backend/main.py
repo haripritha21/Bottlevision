@@ -217,6 +217,15 @@ def list_videos():
     return {"videos": videos}
 
 
+@app.post("/reset_analysis")
+def reset_analysis():
+    try:
+        analysis_run_lock.release()
+    except RuntimeError:
+        pass
+    return {"message": "Analysis lock reset"}
+
+
 # ── assets folder video-ஐ analyze பண்ண ──────────────────────────
 @app.post("/analyze_assets_video", status_code=202)
 async def analyze_assets_video(payload: dict):
