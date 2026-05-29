@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = "https://bottlevisio.onrender.com";
 const STATUS_TIMEOUT_MS = 5000;
 const ANALYSIS_TIMEOUT_MS = 120000;
 const ANALYSIS_POLL_INTERVAL_MS = 700;
