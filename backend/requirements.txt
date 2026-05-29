@@ -2,7 +2,7 @@ fastapi==0.128.0
 uvicorn==0.47.0
 numpy==2.2.6
 opencv-python-headless==4.12.0.88
-torch==2.12.0+cpu
-torchvision==0.27.0+cpu
 ultralytics==8.4.56
 python-multipart
+torch==2.12.0
+torchvision==0.27.0
